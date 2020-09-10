@@ -16,7 +16,7 @@ public class ConsultoriaController {
             return consul;
         }
 
-        
+
         @PostMapping("/cadastro")
             public void cadastrarFuncionario (@RequestBody Consultor novoConsul){
             consul.add(novoConsul);
