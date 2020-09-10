@@ -12,11 +12,11 @@ public abstract class Funcionario implements Consultoria {
     private String nome;
     private Double salario;
     private String projetoAtuante;
-    private Double cargaHoraria;
+    private Integer cargaHoraria;
     private Double promocao;
 
 
-    public Funcionario(String nome, Double salario, String projetoAtuante, Double cargaHoraria, Double promocao) {
+    public Funcionario(String nome, Double salario, String projetoAtuante, Integer cargaHoraria, Double promocao) {
         this.nome = nome;
         this.salario = salario;
         this.projetoAtuante = projetoAtuante;
@@ -30,10 +30,6 @@ public abstract class Funcionario implements Consultoria {
 
     public Double getSalario() {
         return salario;
-    }
-
-    public Double salarioTotal(){
-        return getSalario()+getPromocao();
     }
 
     public String getProjetoAtuante() {
@@ -52,7 +48,7 @@ public abstract class Funcionario implements Consultoria {
         this.projetoAtuante = projetoAtuante;
     }
 
-    public Double getCargaHoraria() {
+    public Integer getCargaHoraria() {
         return cargaHoraria;
     }
 
@@ -64,7 +60,7 @@ public abstract class Funcionario implements Consultoria {
         this.promocao = promocao;
     }
 
-    public void setCargaHoraria(Double cargaHoraria) {
+    public void setCargaHoraria(Integer cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
     }
 
@@ -80,8 +76,6 @@ public abstract class Funcionario implements Consultoria {
                 ", projetoAtuante='" + projetoAtuante + '\'' +
                 ", cargaHoraria=" + cargaHoraria +
                 ", promocao=" + promocao +
-                ", valorHora="+getValorRecebidoHora()+
-                ", salarioTotal=" +salarioTotal()+
                 '}';
     }
 }

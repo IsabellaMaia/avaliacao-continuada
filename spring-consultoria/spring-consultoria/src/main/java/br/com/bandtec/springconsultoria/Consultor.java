@@ -14,10 +14,10 @@ public class Consultor extends Funcionario {
     private String perfil;
 
 
-    public Consultor(String nome, Double salario, String projetoAtuante,
-                     Double cargaHoraria, Double promocao, String perfil) {
+    public Consultor(String nome, Double salario, String projetoAtuante, Integer cargaHoraria, Double promocao, String perfil) {
         super(nome, salario, projetoAtuante, cargaHoraria, promocao);
         this.perfil = perfil;
+
     }
 
     @RestController
@@ -33,7 +33,7 @@ public class Consultor extends Funcionario {
     }
 
     public Double getValorRecebidoHora() {
-        return getSalario()/(getCargaHoraria()*22)+getPromocao();
+        return getSalario()/(getCargaHoraria()*22);
     }
 
 
@@ -51,6 +51,9 @@ public class Consultor extends Funcionario {
     }
 
 
+    public Double salarioTotal(){
+        return getSalario()+getPromocao();
+    }
 
     @Override
     public String toString() {

@@ -5,7 +5,7 @@ public class GestorProjeto extends Funcionario {
     private Double pagamentoHoraAdicional;
 
 
-    public GestorProjeto(String nome, Double salario, String projetoAtuante, Double cargaHoraria,
+    public GestorProjeto(String nome, Double salario, String projetoAtuante, Integer cargaHoraria,
                          Double promocao, Double pagamentoHora) {
         super(nome, salario, projetoAtuante, cargaHoraria, promocao);
         this.pagamentoHoraAdicional = pagamentoHora;
@@ -21,13 +21,14 @@ public class GestorProjeto extends Funcionario {
     }
 
     public Double getSalarioGP(){
-        return getSalario() + getPagamentoHora();
+        return getSalario() + getPagamentoHora() +getPromocao();
     }
 
     @Override
     public String toString() {
         return "GestorProjeto{" +
-                "Pagamento por Hora=" + pagamentoHoraAdicional +
+                "Pagamento por Hora Adicional=" + pagamentoHoraAdicional +
+                "salarioGestor=" +getSalarioGP()+
                 "} " + super.toString();
     }
 }
